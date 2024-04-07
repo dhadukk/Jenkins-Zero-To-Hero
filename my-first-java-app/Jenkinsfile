@@ -6,9 +6,9 @@ pipeline {
         docker { image 'maven:3.8.1-adoptopenjdk-11' }
       }
       steps {
-        sh 'mvn package
+        sh '''mvn package
         ls -lart
-        pwd'
+        pwd'''
       }
     }
     // stage('Front-end') {
