@@ -7,7 +7,7 @@ pipeline {
       }
       steps {
         sh '''cd my-first-java-app
-        mvn package
+        ls -lart
         '''
       }
     }
