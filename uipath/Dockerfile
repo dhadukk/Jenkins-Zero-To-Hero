@@ -1,11 +1,21 @@
-# Use the official UiPath base image
-FROM uipathplatform/automation:21.10
+# Use an appropriate base image
+FROM ubuntu:20.04
 
-# Copy your UiPath project files into the container
-COPY . /project
+# Install necessary dependencies
+RUN apt-get update && \
+    apt-get install -y wget && \
+    wget https://download.uipath.com/UiPathStudio.msi && \
+    apt-get install -y unzip && \
+    apt-get clean
 
-# Set the working directory to your project directory
+# Install UiPath Studio
+RUN dpkg -i UiPathStudio.msi
+
+# Set the working directory
 WORKDIR /project
+
+# Copy the UiPath project files into the container
+COPY . /project
 
 # Create the output directory
 RUN mkdir /output
