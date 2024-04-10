@@ -6,9 +6,7 @@ pipeline {
         docker { image 'maven:3.8.1-adoptopenjdk-11' }
       }
       steps {
-        sh '''cd my-first-java-app
-ls -lart
-mvn package'''
+        sh '''cd my-first-java-app && mvn package'''
       }
     }
     // stage('Front-end') {
