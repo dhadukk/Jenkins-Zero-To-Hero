@@ -1,0 +1,14 @@
+{
+    "name": "HelloWorld",
+    "description": "",
+    "main": "Main.xaml",
+    "dependencies": {
+      "UiPath.UIAutomation.Activities": "[21.10.0]"
+    },
+    "schemaVersion": "4.0",
+    "studioVersion": "21.10.0",
+    "runtimeOptions": {
+      "autoDispose": true
+    }
+  }
+  
