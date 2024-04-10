@@ -13,8 +13,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Buid Docker Image'
-                    docker build -t uipath-builder .
-                    docker run -v /project:/project -v output:/output uipath-builder
+                    cd uipath && docker build -t uipath-builder . && docker run -v /project:/project -v output:/output uipath-builder
                     '''
                 }
             }
